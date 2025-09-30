@@ -6,12 +6,7 @@ class StringCalculatorService
     else
       integer_numbers = string.split(/,|\n|;/).map(&:to_i)
 
-      negative_numbers = []
-      integer_numbers.each do |num|
-        if num < 0
-          negative_numbers << num
-        end
-      end
+      negative_numbers = integer_numbers.select(&:negative?)
 
       if negative_numbers.length > 0
         raise "Negative numbers are not allowed: #{negative_numbers.join(', ')}"
