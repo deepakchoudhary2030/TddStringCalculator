@@ -23,5 +23,9 @@ RSpec.describe StringCalculatorService do
     it 'will return the addition of comma seperate numbers only even if we have \n' do
       expect(string_calculator.addition("1\n2,3")).to eq(6)
     end
+
+    it 'will handles different types of delimiters and return addition' do
+      expect(string_calculator.addition("//;\n1;2")).to eq(3)
+    end
   end
 end
