@@ -4,7 +4,7 @@ class StringCalculatorService
     if string.blank?
       0
     else
-      string.to_i
+      string.split(',').map(&:to_i).sum
     end
   end
 end
