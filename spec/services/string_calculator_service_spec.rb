@@ -11,5 +11,17 @@ RSpec.describe StringCalculatorService do
     it 'will return one if the string as single input number' do
       expect(string_calculator.addition('1')).to eq(1)
     end
+
+    it 'will return addition of the two comma seperate numbers' do
+      expect(string_calculator.addition('3, 4')).to eq(7)
+    end
+
+    it 'will return the addition of the multiple comma seperated numbers' do
+      expect(string_calculator.addition('3, 5, 7, 1')).to eq(16)
+    end
+
+    it 'will return the addition of comma seperate numbers only even if we have \n' do
+      expect(string_calculator.addition("1\n2,3")).to eq(6)
+    end
   end
 end
