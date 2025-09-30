@@ -7,5 +7,9 @@ RSpec.describe StringCalculatorService do
     it 'will return zero if the string is empty' do
       expect(string_calculator.addition('')).to eq(0)
     end
+
+    it 'will return one if the string as single input number' do
+      expect(string_calculator.addition('1')).to eq(1)
+    end
   end
 end
