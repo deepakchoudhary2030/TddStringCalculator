@@ -27,5 +27,9 @@ RSpec.describe StringCalculatorService do
     it 'will handles different types of delimiters and return addition' do
       expect(string_calculator.addition("//;\n1;2")).to eq(3)
     end
+
+    it 'will raise an error if we have negative numbers' do
+      expect { string_calculator.addition("1, -2, -3, 4") }.to raise_error('Negative numbers are not allowed: -2, -3')
+    end
   end
 end
